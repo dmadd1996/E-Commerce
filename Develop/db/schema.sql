@@ -12,9 +12,9 @@ CREATE TABLE Category (
 CREATE TABLE Product (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     product_name VARCHAR(30) NOT NULL,
-    price DEC (30, 2) NOT NULL ...,
-    stock INT NOT NULL DEFAULT(10) ...,
-    category_id INT
+    price DEC (30, 2) NOT NULL,
+    stock INT NOT NULL DEFAULT(10),
+    category_id INT,
     INDEX category_id (category_id),
     CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Category(id) ON DELETE CASCADE
 );
