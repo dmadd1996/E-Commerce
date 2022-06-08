@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
   Product.findAll({
     include: [Tag]
   })
+  .then((products)=>res.json(products))
+  .catch((error)=>res.status(500).json(error))
 });
 
 // get one product
